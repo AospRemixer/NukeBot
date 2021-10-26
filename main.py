@@ -33,7 +33,7 @@ M_Names = ["ran by upytry @everyone"]
  
 token = ""
  
-client = commands.Bot(command_prefix='v!')
+client = commands.Bot(command_prefix='$')
 
 client.remove_command('help')
 
