@@ -44,7 +44,7 @@ client.remove_command('help')
 ###########################################################################################
 
 @client.command()
-async def anti(ctx, amount=1000):
+async def nuke(ctx, amount=1000):
    channels = ctx.guild.channels
    for channel in channels:
       try:
